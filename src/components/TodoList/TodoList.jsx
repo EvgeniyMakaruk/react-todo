@@ -9,7 +9,14 @@ function TodoList({ todos, onToggle }) {
       <div className={s.todoList}>
          <ul>
             {
-               todos.map(todo => <TodoItem key={todo.id} todo={todo} onChange={onToggle} />)
+               todos.map((todo,index) => <TodoItem
+                  key={todo.id}
+                  todo={todo}
+                  onChange={onToggle}
+                  index={index}
+                  
+            
+                   />)
             }
 
          </ul>

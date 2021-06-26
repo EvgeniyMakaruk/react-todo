@@ -2,7 +2,9 @@ import React from 'react'
 import s from './TodoItem.module.css'
 import Context from '../../../context'
 
-function TodoItem({ todo, onChange }) {
+function TodoItem({ todo, onChange, index}) {
+   console.log(index)
+   
    const classes = []
    if (todo.completed) {
       classes.push('done')
@@ -17,11 +19,11 @@ function TodoItem({ todo, onChange }) {
                   type="checkbox"
                   onChange={() => onChange(todo.id)} />
 
-               <strong>{todo.id + ' '}</strong>
+               <strong>{index+1 + ' '}</strong>
                {todo.title}
             </span>
-            <button onClick={()=>removeTodo(todo.id)}>&times;</button>
-            
+            <button onClick={() => removeTodo(todo.id)}>&times;</button>
+
          </li>
       </div>
    )
