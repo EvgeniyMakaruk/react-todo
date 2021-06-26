@@ -1,12 +1,13 @@
 import React from 'react'
 import s from './TodoItem.module.css'
+import Context from '../../../context'
 
 function TodoItem({ todo, onChange }) {
    const classes = []
    if (todo.completed) {
       classes.push('done')
    }
-
+   const { removeTodo } = React.useContext(Context)
    return (
       <div className={s.todoItem}>
          <li >
@@ -19,7 +20,8 @@ function TodoItem({ todo, onChange }) {
                <strong>{todo.id + ' '}</strong>
                {todo.title}
             </span>
-            <button>&times;</button>
+            <button onClick={()=>removeTodo(todo.id)}>&times;</button>
+            
          </li>
       </div>
    )
