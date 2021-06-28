@@ -2,4 +2,7 @@
    list-style-type: none;
    padding: 0;
    margin: 0;
+   padding: 10px;
+   border: 2px solid #96EDF2;
+   border-radius: 10px;
 }

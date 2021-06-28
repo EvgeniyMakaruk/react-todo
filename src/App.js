@@ -2,12 +2,13 @@ import React from "react";
 import TodoList from "./components/TodoList/TodoList";
 import Context from './context';
 import AddTodo from "./components/AddTodo";
+import Modal from './modal/Modal.jsx';
 
 function App() {
   const [todos, setTodos] = React.useState([
     { id: 1, completed: false, title: 'купить хлеб' },
-    { id: 2, completed: false, title: 'купить молоко' },
-    { id: 3, completed: false, title: 'купить омывайку' }
+    { id: 2, completed: false, title: 'купить масло' },
+    { id: 3, completed: false, title: 'купить укроп' }
   ])
 
   function onToggle(id) {
@@ -38,6 +39,7 @@ function App() {
     <Context.Provider value={{ removeTodo }}>
       <div className="wrapper">
         <h1>React todo</h1>
+        <Modal/>
         <AddTodo onCreate={addTodo} />
         {
           todos.length ? <TodoList todos={todos} onToggle={onToggle} /> : <p>no todos</p>

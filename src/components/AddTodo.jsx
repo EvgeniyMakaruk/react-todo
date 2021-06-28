@@ -1,4 +1,5 @@
 import React from 'react'
+import s from './AddTodo.module.css'
 
 function useInputValue(defauldValue = '') {
    const [value, setValue] = React.useState(defauldValue)
@@ -27,7 +28,7 @@ function AddTodo({ onCreate }) {
       }
    }
    return (
-      <form style={{ marginBottom: '1rem' }} onSubmit={submitHandler}>
+      <form style={{ marginBottom: '1rem' }} onSubmit={submitHandler} className={s.form} >
          <input {...input.bind} />
          <button type='submit'>add</button>
       </form>
